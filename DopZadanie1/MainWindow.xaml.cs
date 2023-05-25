@@ -13,11 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Zadanie3
+namespace DopZadanie1
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
-    /// </summary> 
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -25,23 +25,28 @@ namespace Zadanie3
             InitializeComponent();
         }
 
-        private void OK_Click(object sender, RoutedEventArgs e)
+        private void Btn_Click(object sender, RoutedEventArgs e)
         {
-
-            int N = Convert.ToInt32(nTextBox.Text);
-            float nak = 0;
-            if (N > 0)
+            try
             {
-                for (int i = 1; i <= N; i++)
+                int n = Convert.ToInt32(nTextBox.Text);
+                int k = Convert.ToInt32(kTextBox.Text);
+                double summ = 0;
+                for (int i = 1; i <= n; i++)
                 {
-                    nak += (float)1 / i;
+                    summ += Math.Pow(i, k);
                 }
-                Otvet.Text = $"{nak:f2}";
+                Otvet.Text = $"Ответ:Сумма: {summ}";
             }
-            else
+            catch (FormatException)
             {
-                Otvet.Text = $"Число меньше нуля";
+                MessageBox.Show("Введены не корректные данные");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
 }
+

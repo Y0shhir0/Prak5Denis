@@ -13,11 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Zadanie3
+namespace Zadanie5
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
-    /// </summary> 
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -27,21 +27,16 @@ namespace Zadanie3
 
         private void OK_Click(object sender, RoutedEventArgs e)
         {
-
-            int N = Convert.ToInt32(nTextBox.Text);
-            float nak = 0;
-            if (N > 0)
+            double x = 1.0, y = 1.0, n1;
+            n1 = x / (1 + Math.Abs(y));
+            int n = Convert.ToInt32(nTextBox.Text);
+            for (int i = 2; i <= n; i++)
             {
-                for (int i = 1; i <= N; i++)
-                {
-                    nak += (float)1 / i;
-                }
-                Otvet.Text = $"{nak:f2}";
+                x = 0.3 * (x - 1);
+                y = x + y;
+                n1 += x / (1 + Math.Abs(y));
             }
-            else
-            {
-                Otvet.Text = $"Число меньше нуля";
-            }
+            Otvet.Text = $"Ответ: {n1}";
         }
     }
 }

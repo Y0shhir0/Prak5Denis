@@ -13,11 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Zadanie3
+namespace Zadanie4
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
-    /// </summary> 
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -25,22 +25,25 @@ namespace Zadanie3
             InitializeComponent();
         }
 
-        private void OK_Click(object sender, RoutedEventArgs e)
-        {
 
-            int N = Convert.ToInt32(nTextBox.Text);
-            float nak = 0;
-            if (N > 0)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (double.TryParse(aTextBox.Text, out double a) && int.TryParse(nTextBox.Text, out int n) && n > 0)
             {
-                for (int i = 1; i <= N; i++)
+                double a1 = 1;
+                double sum = 1;
+
+                for (int i = 0; i < n; i++)
                 {
-                    nak += (float)1 / i;
+                    a1 = a1 * a * (-1);
+                    sum = sum + a1;
                 }
-                Otvet.Text = $"{nak:f2}";
+
+                Otvet.Text = $"Значение выражения: {sum:F2}";
             }
             else
             {
-                Otvet.Text = $"Число меньше нуля";
+                Otvet.Text = "Некорректный ввод";
             }
         }
     }

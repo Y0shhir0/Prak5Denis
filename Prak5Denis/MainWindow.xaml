@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Prak5Denis"
         mc:Ignorable="d"
-   Title="Пример 1" Height="360" Width="300" WindowStartupLocation="CenterScreen" FontFamily="Comic Sans MS" WindowStyle="ToolWindow" ResizeMode="NoResize">
-    <Grid Background="White">
+   Title="Пример 1" Height="360" Width="300" WindowStartupLocation="CenterScreen" FontFamily="Comic Sans MS" WindowStyle="ToolWindow" ResizeMode="NoResize" Background="Aqua">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="120"/>
             <ColumnDefinition/>
@@ -18,7 +18,7 @@
             <RowDefinition/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Пример 1" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Margin="2,6,116,6" Width="56"/>
+        <TextBlock Text="Задание 2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Margin="2,6,116,6" Width="56"/>
         <TextBlock Text="Данные" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,6,0,6" Height="18" Width="45" />
         <TextBlock Text="Входные данные" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Height="17" Width="98" />
         <TextBlock x:Name="TextBlockAnswer" Text="Ответ: " Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" />
