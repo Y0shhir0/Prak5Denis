@@ -98,7 +98,7 @@ namespace Prak5Denis
 
 //try
 //{
-
+ 
 //    int n = Convert.ToInt32(ListBoxData.Items[0]);
 //    int max = 0;
 //    List<int> sequence = new List<int>();

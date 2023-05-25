@@ -51,7 +51,7 @@ namespace Zadanie1
             catch (FormatException) { MessageBox.Show("Введены не корректные данные"); }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             ListBoxData.Items.Add(TbNumber.Text);
-        }
+        } 
 
     }
 }
